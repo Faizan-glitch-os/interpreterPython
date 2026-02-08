@@ -20,3 +20,14 @@ class VirtualMachine:
         return "None"
 
     def run_frame(self, frame): ...
+
+    def push_frame(self, frame):
+        self.frame_call_stack.append(frame)
+        self.current_frame = frame
+
+    def pop_frame(self):
+        self.frame_call_stack.pop()
+        if self.frame_call_stack:
+            self.current_frame = self.frame_call_stack[-1]
+        else:
+            self.current_frame = None
