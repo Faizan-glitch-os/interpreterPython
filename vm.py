@@ -35,7 +35,8 @@ class VirtualMachine:
 
         local_names.update(call_args)
 
-        return "frame"
+        frame = Frame(code_obj, local_names, global_names, self.current_frame)
+        return frame
 
     def run_frame(self, frame): ...
 
