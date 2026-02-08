@@ -2,7 +2,7 @@ class VirtualMachineError(Exception):
     pass
 
 
-class VirtualMachine(object):
+class VirtualMachine:
     def __init__(self) -> None:
         self.frame_call_stack = []
         self.current_frame = None
